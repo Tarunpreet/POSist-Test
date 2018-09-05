@@ -34,10 +34,10 @@ public:
 	string name;
 	Hash(){
 	}
-	Hash(int o,int v,string n){
-		ownerId = o;
-		value = v;
-		name = n;
+	Hash(int owner,int val,string n1){
+		ownerId = owner;
+		value = val;
+		name = n1;
 	}
 };
 
@@ -137,7 +137,7 @@ int main(){
 	int values;
 	do{
 		cout<<"Options Possible :"<<endl;
-		cout<<"1 : Add Node to genesis node or down the line if not possible for genesis node."<<endl;
+		cout<<"1 : Add Node to genesis node"<<endl;
 		cout<<"Enter value : ";
 		cin>>values;
 		switch(values){
