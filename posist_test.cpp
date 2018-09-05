@@ -10,7 +10,7 @@ public:
 	vector<Node*> childRef;		//Child Node Ids address
 	Node* genNodeId;		//Genesis Node Id address
 	
-	/** Constructor to initialize Node**/
+	//Constructor to initialize Node
 	Node(int num,int d,Node* ref,Node* gen){
 		nodeNumber = num;
 		data = d;
@@ -19,7 +19,6 @@ public:
 		genNodeId = gen;
 	}
 	
-	/**Function to return Sum of data of all child **/
 	int getSumChild(){
 		int val = 0;
 		for(auto i = childRef.begin();i!=childRef.end();i++){
@@ -55,7 +54,6 @@ public:
 		h = h1;
 	}
 };
-/** Provide value of longest chain possible **/
 int longestChain(Node* p){
 	if(p == NULL){
 		return 0;
@@ -97,8 +95,6 @@ bool addToCertainNode(int data,Node* p,int num,Node* gen){
 	}
 	return false;
 }
-
-/** Merge Node With two address **/
 void mergeNode(Node* node1,Node* node2){
 	if(longestChain(node1) > longestChain(node2)){
 		node1->data += node2->data;
@@ -109,7 +105,7 @@ void mergeNode(Node* node1,Node* node2){
 	delete node2;
 }
 
-/** Finding Node given data and address of genesis node or parent node **/
+/** Finding Node with given data and address of genesis node or parent node **/
 Node* findNode(int data,Node* check){
 	if(check->data == data){
 		return p;
@@ -142,11 +138,6 @@ int main(){
 	do{
 		cout<<"Options Possible :"<<endl;
 		cout<<"1 : Add Node to genesis node or down the line if not possible for genesis node."<<endl;
-		cout<<"2 : Merge Two Nodes by giving data."<<endl;
-		cout<<"3 : Add Node to certain Node by providing address of it."<<endl;
-		cout<<"4 : Find longest chain of genesis node."<<endl;
-		cout<<"5 : Find longest chain of Node by providing address of it."<<endl;
-		cout<<"6 : Exit"<<endl;
 		cout<<"Enter value : ";
 		cin>>values;
 		switch(values){
